@@ -65,31 +65,6 @@ export default function Index({ auth, projects, queryParams = null }) {
                       >
                         ID
                       </TableHeading>
-                      {/* <th onClick={(e) => sortChanged("id")}>
-                        <div className="px-3 py-3 flex items-center justify-between gap-1 cursor-pointer">
-                          ID
-                          <div>
-                            <ChevronUpIcon
-                              className={
-                                "w-4 " +
-                                (queryParams.sort_field === "id" &&
-                                queryParams.sort_direction === "asc"
-                                  ? "text-white"
-                                  : "")
-                              }
-                            />
-                            <ChevronDownIcon
-                              className={
-                                "w-4 -mt-2 " +
-                                (queryParams.sort_field === "id" &&
-                                queryParams.sort_direction === "desc"
-                                  ? "text-white"
-                                  : "")
-                              }
-                            />
-                          </div>
-                        </div>
-                      </th> */}
                       <th className="px-3 py-3">Image</th>
                       <TableHeading
                         name="name"
@@ -172,7 +147,6 @@ export default function Index({ auth, projects, queryParams = null }) {
                       >
                         <th className="px-3 py-3">{project.id}</th>
                         <td className="px-3 py-3">
-                          {/* {project.image_path} */}
                           <img
                             src={project.image_path}
                             alt={project.name}
@@ -180,7 +154,11 @@ export default function Index({ auth, projects, queryParams = null }) {
                           />
                         </td>
 
-                        <td className="px-3 py-3">{project.name}</td>
+                        <th className="px-3 py-3 hover:underline text-gray-100 text-nowrap">
+                          <Link href={route("project.show", project.id)}>
+                            {project.name}
+                          </Link>
+                        </th>
                         <td className="px-3 py-3">
                           <span
                             className={

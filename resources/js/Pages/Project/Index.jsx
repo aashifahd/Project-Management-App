@@ -58,42 +58,6 @@ export default function Index({ auth, projects, queryParams = null }) {
                 <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                   <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 border-b-2 border-gray-500">
                     <tr className="text-nowrap">
-                      <th className="px-3 py-3"></th>
-                      <th className="px-3 py-3"></th>
-                      <th className="px-3 py-3">
-                        <TextInput
-                          defaultValue={queryParams.name}
-                          className="w-full"
-                          placeholder="Project Name"
-                          onBlur={(e) =>
-                            searchFieldChanged("name", e.target.value)
-                          }
-                          onKeyPress={(e) => onKeyPress("name", e)}
-                        />
-                      </th>
-                      <th className="px-3 py-3">
-                        <SelectInput
-                          defaultValue={queryParams.status}
-                          className="w-full"
-                          onChange={(e) =>
-                            searchFieldChanged("status", e.target.value)
-                          }
-                        >
-                          <option value="">Select Status</option>
-                          <option value="pending">Pending</option>
-                          <option value="in_progress">In Progress</option>
-                          <option value="completed">Completed</option>
-                        </SelectInput>
-                      </th>
-                      <th className="px-3 py-3"></th>
-                      <th className="px-3 py-3"></th>
-                      <th className="px-3 py-3"></th>
-                      <th className="px-3 py- text-right"></th>
-                    </tr>
-                  </thead>
-
-                  <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 border-b-2 border-gray-500">
-                    <tr className="text-nowrap">
                       <TableHeading
                         name="id"
                         sort_direction={queryParams.sort_direction}
@@ -162,6 +126,42 @@ export default function Index({ auth, projects, queryParams = null }) {
                       </TableHeading>
                       <th className="px-3 py-3">Created By</th>
                       <th className="px-3 py- text-right">Actions</th>
+                    </tr>
+                  </thead>
+
+                  <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 border-b-2 border-gray-500">
+                    <tr className="text-nowrap">
+                      <th className="px-3 py-3"></th>
+                      <th className="px-3 py-3"></th>
+                      <th className="px-3 py-3">
+                        <TextInput
+                          defaultValue={queryParams.name}
+                          className="w-full"
+                          placeholder="Project Name"
+                          onBlur={(e) =>
+                            searchFieldChanged("name", e.target.value)
+                          }
+                          onKeyPress={(e) => onKeyPress("name", e)}
+                        />
+                      </th>
+                      <th className="px-3 py-3">
+                        <SelectInput
+                          defaultValue={queryParams.status}
+                          className="w-full"
+                          onChange={(e) =>
+                            searchFieldChanged("status", e.target.value)
+                          }
+                        >
+                          <option value="">Select Status</option>
+                          <option value="pending">Pending</option>
+                          <option value="in_progress">In Progress</option>
+                          <option value="completed">Completed</option>
+                        </SelectInput>
+                      </th>
+                      <th className="px-3 py-3"></th>
+                      <th className="px-3 py-3"></th>
+                      <th className="px-3 py-3"></th>
+                      <th className="px-3 py- text-right"></th>
                     </tr>
                   </thead>
 

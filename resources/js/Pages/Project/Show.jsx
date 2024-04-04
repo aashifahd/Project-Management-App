@@ -33,8 +33,8 @@ export default function Show({ auth, project, tasks, queryParams }) {
                     <p className="mt-1">{project.id}</p>
                   </div>
                   <div className="mt-4">
-                    <label className="font-bold text-lg">Project ID</label>
-                    <p className="mt-1">{project.id}</p>
+                    <label className="font-bold text-lg">Project Name</label>
+                    <p className="mt-1">{project.name}</p>
                   </div>
                   <div className="mt-4">
                     <label className="font-bold text-lg">Project Status</label>
